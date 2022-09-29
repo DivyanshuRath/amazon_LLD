@@ -7,7 +7,7 @@ public class Account {
     private String password;
     AccountStatus accountStatus;
     private String address;
-    private String email;
+    private String emailID;
     private String phoneNumber;
 
     public String getUserName() {
