@@ -14,4 +14,5 @@ public class AccountRequest {
     private String address;
     private String emailID;
     private String phoneNumber;
+    private AccountStatus accountStatus;
 }

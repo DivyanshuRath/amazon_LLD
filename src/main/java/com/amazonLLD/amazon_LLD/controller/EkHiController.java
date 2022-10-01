@@ -4,8 +4,7 @@ import com.amazonLLD.amazon_LLD.dto.AccountRequest;
 import com.amazonLLD.amazon_LLD.entity.Account;
 import com.amazonLLD.amazon_LLD.service.EkHiServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EkHiController {
@@ -14,7 +13,18 @@ public class EkHiController {
     EkHiServiceImpl ekHiServiceImpl;
 
     @PostMapping("/addAccount")
-    public Account addAccount(AccountRequest accountRequest){
+    public Account addAccount(@RequestBody AccountRequest accountRequest){
         return ekHiServiceImpl.addAccount(accountRequest);
     }
+
+    @GetMapping("/getAccount")
+    public AccountRequest getAccount(@RequestParam(name = "id") Integer Id){
+        return ekHiServiceImpl.getAccount(Id);
+    }
+
+    @DeleteMapping("/deleteAccount")
+    public void deleteAccount(@RequestParam(name = "id") Integer Id){
+        ekHiServiceImpl.deleteAccount(Id);
+    }
+
 }

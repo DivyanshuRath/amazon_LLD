@@ -6,5 +6,5 @@ import com.amazonLLD.amazon_LLD.entity.Account;
 public interface EkHiService {
     Account addAccount(AccountRequest accountRequest);
     void deleteAccount(int accountID);
-    Account getAccount(int accountID);
+    AccountRequest getAccount(int accountID);
 }
